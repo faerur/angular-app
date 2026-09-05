@@ -1,0 +1,6 @@
+<ng-content select="[title]"></ng-content>
+<div>
+    <ng-content select="[label]"></ng-content>
+    <input type="text" name="nome" id="nome" #name>
+</div>
+    <button (click)="addTask(name.value)">Adicionar</button>
