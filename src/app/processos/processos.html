@@ -1,17 +1,20 @@
 <div class="container">
 <ng-content select="[title]"></ng-content>
 <div>
-    <label for="nome">{{nameLabel}}</label>
-    <input type="text" name="nome" id="nome" #name>
+    <label for="processo">{{nameLabel}}</label>
+    <input type="text" name="processo" id="processo" #processo>
 </div>
-@if (tasks.length == 0) {
+@if (processos.length == 0) {
   <p>Nenhuma tarefa adicionada</p>
 }
+<p>Total de processos: {{ processos.length }}</p>
 <ul>
-  @for (task of tasks; track $index) {
-  <li>{{task.name}}</li>
+  @for (processo of processos; track $index) {
+  <li>{{processo.toString() }}</li>
   }
 </ul>
-    <button (click)="addTask(name.value)">Adicionar</button>
+    <button (click)="addProcesso(processo.value)">Adicionar</button>
     <button (click)="removeTask()">Remover</button>
+    <button (click)="loadProcessos()">Carregar Processos</button>
+
 </div>
