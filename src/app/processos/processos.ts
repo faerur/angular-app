@@ -17,7 +17,10 @@ export class Processos {
   @ViewChild("name") todoInputRef!: ElementRef<HTMLInputElement>;
   addTask(name:string){
     if(name){
-      console.log(this.todoInputRef.nativeElement.value);
+      this.tasks.push({name});
     }
+  }
+  removeTask(){
+    this.tasks.pop();
   }
 }

@@ -1,6 +1,17 @@
+<div class="container">
 <ng-content select="[title]"></ng-content>
 <div>
-    <ng-content select="[label]"></ng-content>
+    <label for="nome">{{nameLabel}}</label>
     <input type="text" name="nome" id="nome" #name>
 </div>
+@if (tasks.length == 0) {
+  <p>Nenhuma tarefa adicionada</p>
+}
+<ul>
+  @for (task of tasks; track $index) {
+  <li>{{task.name}}</li>
+  }
+</ul>
     <button (click)="addTask(name.value)">Adicionar</button>
+    <button (click)="removeTask()">Remover</button>
+</div>
